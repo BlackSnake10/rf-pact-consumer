@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@500&family=Anton&family=Raleway:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .styled-input {
+    @apply h-8 p-3 rounded-md outline-none
+  }
+
+  .styled-input.error {
+    @apply border-red-600 border-2 bg-red-950
+  }
+
+  .styled-input:focus:not(.error) {
+    @apply bg-neutral-600
+  }
+
+  .styled-select {
+    @apply h-8 p-0 pl-2 rounded-md outline-none
+  }
+
+  .styled-select:focus:not(.error) {
+    @apply bg-neutral-600
+  }
+
+
+  .styled-select.error {
+    @apply border-red-600 border-2 bg-red-950
+  }
+
+  .validation-warning {
+    @apply text-red-600 text-right text-sm css-validation-animation
+  }
+
+  button:disabled {
+    @apply opacity-30
+  }
+
+  .option-chosen {
+    @apply flex items-center place-content-evenly font-raleway bg-neutral-300 text-neutral-900 font-bold
+  }
+
+  .option-excluded {
+    @apply flex items-center place-content-evenly font-raleway font-normal hover:bg-neutral-700 hover:font-bold focus:bg-neutral-700 focus:font-bold
+  }
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.option-excluded .material-symbols-rounded,
+.material-symbols-rounded {
+  user-select: none;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.option-chosen .material-symbols-rounded,
+button:focus:enabled .material-symbols-rounded,
+button:hover:enabled .material-symbols-rounded {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.css-login-screen {
+  background-image: url("https://picsum.photos/2000/2000");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  box-shadow: inset -7px 0px 8px #0000009e;
+}
+
+.css-constraint-div {
+  animation: slidein 0.25s ease-out forwards;
+}
+
+@keyframes slidein {
+  from {
+    margin-bottom: -5vh;
+  }
+
+  to {
+    margin-bottom: 7vh;
+  }
+}
+
+.css-validation-animation {
+  animation: validation-animation 0.25s ease-out forwards;
+}
+
+@keyframes validation-animation {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 0.875rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  padding: 5px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  --_m:
+    conic-gradient(#0000 10%, #000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn)
+  }
+}

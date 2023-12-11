@@ -1,0 +1,98 @@
+{
+  "consumer": {
+    "name": "MinesweepeReact-TS"
+  },
+  "interactions": [
+    {
+      "description": "a request for account deletion",
+      "providerState": "I delete an account",
+      "request": {
+        "method": "DELETE",
+        "path": "/api/v1/account/MOCKUP_TEST_PACT"
+      },
+      "response": {
+        "body": "User deleted",
+        "headers": {
+          "Content-Type": "text/plain"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "a request for account information",
+      "providerState": "I search for an account",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/account/MOCKUP_TEST_PACT"
+      },
+      "response": {
+        "body": {
+          "country": "MOCKUP_COUNTRY",
+          "personal_data": {
+            "name": "NAME",
+            "surname": "SURNAME"
+          },
+          "user_id": "MOCKUP_TEST_PACT",
+          "username": "USER"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "a request for account posting",
+      "providerState": "I want to add a new account",
+      "request": {
+        "body": {
+          "accountInput": {
+            "country": "MOCKUP_COUNTRY",
+            "personal_data": {
+              "name": "NAME",
+              "surname": "SURNAME"
+            },
+            "user_id": "MOCKUP_TEST_PACT",
+            "username": "USER"
+          }
+        },
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/api/v1/account"
+      },
+      "response": {
+        "body": {
+          "country": "MOCKUP_COUNTRY",
+          "personal_data": {
+            "name": "NAME",
+            "surname": "SURNAME"
+          },
+          "user_id": "MOCKUP_TEST_PACT",
+          "username": "USER"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 202
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "12.1.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.9",
+      "models": "1.1.11"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "SpringAPI-MongoDB"
+  }
+}
