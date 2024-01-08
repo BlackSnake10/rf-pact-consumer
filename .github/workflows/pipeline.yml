@@ -19,7 +19,7 @@ jobs:
           run: yarn install --no-audit --no-fund --no-optional
         - name: Lint
           run: yarn eslint
-        - name: Build
+        - name: build
           run: yarn build
         - name: Run test
           run: yarn test:all
