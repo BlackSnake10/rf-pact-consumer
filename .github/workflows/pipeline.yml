@@ -24,7 +24,7 @@ jobs:
           run: yarn eslint
         - name: Build
           run: yarn build
-        - name: Test
+        - name: Run test
           run: yarn test:all
         - name: Cache dependencies
           uses: actions/cache@v2
