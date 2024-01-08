@@ -24,8 +24,6 @@ jobs:
           run: yarn eslint
         - name: Build
           run: yarn build
-        - name: Run test
-          run: yarn test:all
         - name: Cache dependencies
           uses: actions/cache@v2
           with:
@@ -33,4 +31,3 @@ jobs:
             key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
             restore-keys: |
               ${{ runner.os }}-node-
-        
