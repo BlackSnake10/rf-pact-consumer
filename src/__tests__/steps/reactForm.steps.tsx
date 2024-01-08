@@ -62,7 +62,7 @@ export const reactFormSteps = ({
   })
 
   Then(/^the subtitle should show: "(.*)"$/, (expectedInner: unknown) => {
-    const subtitleInner = screen.getByTestId('subtitle').innerHTML
+    const subtitleInner = screen.getByTestId('subtitles').innerHTML
     expect(subtitleInner).toBe(expectedInner)
   })
 
